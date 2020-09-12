@@ -2,6 +2,11 @@
 
 ESX Secret Shop adds.. well you guessed it - secret shops to the already existing shops in the world.
 
+## Dependencies
+```
+- es_extended
+```
+
 ## Download & Installation
 
 ### Using Git

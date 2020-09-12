@@ -34,17 +34,18 @@ end)
 
 AddEventHandler('onResourceStart', function(resourceName)
     if resourceName == GetCurrentResourceName() then
-        TriggerClientEvent('bsrp:spawnNPC', -1)
-        print("DT WEAPONSHOP | Spawned all NPCS")
+        TriggerClientEvent('esx_secretshop:spawnNPC', -1)
+        print("esx_secretshop | Spawned all NPCS")
     else 
         return
     end
 end)
 
-RegisterCommand('anim', function(source, args, rawCommand)
-    TriggerClientEvent('bsrp:playAnim', source)    
+-- Testing purposes
+--[[RegisterCommand('anim', function(source, args, rawCommand)
+    TriggerClientEvent('esx_secretshop:playAnim', source)    
 end, false)
 
 RegisterCommand('clearanim', function(source, args, rawCommand)
-    TriggerClientEvent('bsrp:stopAnim', source)
-end, false)
+    TriggerClientEvent('esx_secretshop:stopAnim', source)
+end, false)]]
