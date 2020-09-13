@@ -16,3 +16,8 @@ server_scripts {
     'locales/en.lua',
     'server/server.lua',
 }
+
+dependencies {
+    'es_extended',
+    'esx_outlawalert'
+}

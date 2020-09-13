@@ -41,6 +41,22 @@ AddEventHandler('onResourceStart', function(resourceName)
     end
 end)
 
+RegisterServerEvent('esx_secretshop:notifyPolice')
+AddEventHandler('esx_secretshop:notifyPolice', function()
+    if Config.NotifyPolice then
+        print('test')
+        TriggerClientEvent('esx_outlawalert:outlawNotify', -1 ,_U('someone_started_mission'))
+    end
+end)
+
+RegisterServerEvent('esx_secretshop:stopPolice')
+AddEventHandler('esx_secretshop:stopPolice', function()
+    if Config.NotifyPolice then
+        print('test')
+        TriggerClientEvent('esx_outlawalert:outlawNotify', -1, _U('the_mission_stopped'))
+    end
+end)
+
 -- Testing purposes
 --[[RegisterCommand('anim', function(source, args, rawCommand)
     TriggerClientEvent('esx_secretshop:playAnim', source)    

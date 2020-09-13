@@ -14,8 +14,8 @@ Citizen.CreateThread(function()
     end
 end)
 
-RegisterNetEvent('bsrp:playAnim')
-AddEventHandler('bsrp:playAnim', function(source)
+RegisterNetEvent('esx_secretshop:playAnim')
+AddEventHandler('esx_secretshop:playAnim', function(source)
     RequestAnimDict("random@shop_gunstore")
     while (not HasAnimDictLoaded("random@shop_gunstore")) do 
         Citizen.Wait(0) 
@@ -148,12 +148,14 @@ function OpenMissionMenu()
                 EndTextCommandSetBlipName(blip)
                 table.insert(blips, blip)
                 isInMission = true
+                TriggerServerEvent("esx_secretshop:notifyPolice")
                 end
             elseif data.current.value == "cancel" then
                 ESX.ShowNotification(_U('mission_canceled'))
                 ClearAllBlipRoutes()
                 RemoveBlip(blip)
                 isInMission = false
+                TriggerServerEvent("esx_secretshop:stopPolice")
             end
         end, function(data, menu)
             menu.close()

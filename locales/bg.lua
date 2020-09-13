@@ -12,5 +12,7 @@ Locales['bg'] = {
     ['mission_blip'] = 'Оръжейна мисия',
     ['showed_the_way'] = 'Мафиота ти показа пътя към мисията.',
     ['talk_with_mission'] = "Натисни ~INPUT_CONTEXT~ за да говориш с мафиота.",
-    ['talk_with_gang'] = "Натисни ~INPUT_CONTEXT~ за да говориш с продавача на оръжия."
+    ['talk_with_gang'] = "Натисни ~INPUT_CONTEXT~ за да говориш с продавача на оръжия.",
+    ['the_mission_stopped'] = "Мисията с нелегалните оръжия е спряна.",
+    ['someone_started_mission'] = "Някой отива да купува оръжия ~r~НЕЛЕГАЛНО~s~!"
 }

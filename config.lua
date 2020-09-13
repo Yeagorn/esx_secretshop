@@ -1,12 +1,14 @@
 Config = {}
 
+Config.Locale = 'en'
+
 Config.UseBlackMoney = true
+
+Config.NotifyPolice = true
 
 Config.NPC = {
     { x = -1728.19, y = 3230.78, z = 31.8, h = 58.79 },
 }
-
-Config.Locale = 'en'
 
 Config.Items = {
     {name = 'APPISTOL', price = 1000, label = 'AP Pistol'}
