@@ -4,6 +4,7 @@ ESX Secret Shop adds.. well you guessed it - secret shops to the already existin
 
 ### Dependencies
 - es_extended
+- esx_outlawalert
 
 ## Download & Installation
 
