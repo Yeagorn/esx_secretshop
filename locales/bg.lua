@@ -7,10 +7,10 @@ Locales['bg'] = {
     ['missions'] = 'Мисии',
     ['cancel_missions'] = 'Откажи мисиите',
     ['you_have_bought'] = 'Ти си закупи този предмет',
-    ['weaponmenu'] = 'Illegal Weaponshop',
-    ['mission_canceled'] = 'You\'ve cancelled the mission.',
+    ['weaponmenu'] = 'Нелегален магазин',
+    ['mission_canceled'] = 'Ти прекрати мисията си.',
     ['mission_blip'] = 'Оръжейна мисия',
     ['showed_the_way'] = 'Мафиота ти показа пътя към мисията.',
-    ['talk_with_mission'] = "Press ~INPUT_CONTEXT~ to talk with the gang member.",
-    ['talk_with_gang'] = "Press ~INPUT_CONTEXT~ to talk with the weapon seller."
+    ['talk_with_mission'] = "Натисни ~INPUT_CONTEXT~ за да говориш с мафиота.",
+    ['talk_with_gang'] = "Натисни ~INPUT_CONTEXT~ за да говориш с продавача на оръжия."
 }
