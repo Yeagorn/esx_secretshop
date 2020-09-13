@@ -2,10 +2,8 @@
 
 ESX Secret Shop adds.. well you guessed it - secret shops to the already existing shops in the world.
 
-## Dependencies
-```
+### Dependencies
 - es_extended
-```
 
 ## Download & Installation
 
@@ -30,7 +28,7 @@ start esx_secretshop
 ### License
 esx_secretshop - Legal and illegal weapon shops
 
-Copyright (C) 2015-2020 Yeagorn
+Copyright (C) 2020 Yeagorn
 
 This program Is free software: you can redistribute it And/Or modify it under the terms Of the GNU General Public License As published by the Free Software Foundation, either version 3 Of the License, Or (at your option) any later version.
 
