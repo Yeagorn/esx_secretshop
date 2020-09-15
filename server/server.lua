@@ -15,7 +15,7 @@ AddEventHandler('esx_secretshop:buyWeapon',  function(weapon, price)
             else
                 xPlayer.removeAccountMoney("black_money", price)
                 xPlayer.addWeapon('WEAPON_' .. weapon, 1)
-                TriggerClientEvent('esx:showNotification', _source, (_U('you_have_bought')))
+                TriggerClientEvent('esx:showNotification', _source, (_U('bought_weapon')))
             end
         end
     else 
@@ -27,6 +27,39 @@ AddEventHandler('esx_secretshop:buyWeapon',  function(weapon, price)
             else
                 xPlayer.removeMoney(price)
                 xPlayer.addWeapon('WEAPON_' .. weapon, 1)
+                TriggerClientEvent('esx:showNotification', _source, (_U('bought_weapon')))
+            end
+        end
+    end
+end)
+
+RegisterServerEvent('esx_secretshop:buyItem')
+AddEventHandler('esx_secretshop:buyItem',  function(item, price)
+    
+    local _source = source
+    local xPlayer = ESX.GetPlayerFromId(source)
+    if Config.UseBlackMoney then
+        if xPlayer.getAccount('black_money').money < price then
+            TriggerClientEvent('esx:showNotification', _source, (_U('not_enough_money')))
+        elseif xPlayer.getAccount('black_money').money >= price then
+            if xPlayer.getInventoryItem(item).count >= Config.Limit then
+                TriggerClientEvent('esx:showNotification', _source, (_U('you_already_have')))
+            else
+                xPlayer.removeAccountMoney("black_money", price)
+                xPlayer.addInventoryItem(item, 1)
+                TriggerClientEvent('esx:showNotification', _source, (_U('bought_item')))
+            end
+        end
+    else 
+        if xPlayer.getMoney() < price then
+            TriggerClientEvent('esx:showNotification', _source, (_U('not_enough_money')))
+        elseif xPlayer.getMoney() >= price then
+            if xPlayer.getInventoryItem(item).count >= Config.Limit then
+                TriggerClientEvent('esx:showNotification', _source, (_U('you_already_have')))
+            else
+                xPlayer.removeMoney(price)
+                xPlayer.addInventoryItem(item, 1)
+                TriggerClientEvent('esx:showNotification', _source, (_U('bought_item')))
             end
         end
     end

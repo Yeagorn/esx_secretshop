@@ -4,6 +4,7 @@ local generalPed
 local isInMission = false
 local SpawnedPeds = false
 local PlayingAnim = false
+local time = Config.Time
 
 local blips = {}
 
@@ -14,21 +15,28 @@ Citizen.CreateThread(function()
     end
 end)
 
-RegisterNetEvent('esx_secretshop:playAnim')
-AddEventHandler('esx_secretshop:playAnim', function(source)
-    RequestAnimDict("random@shop_gunstore")
-    while (not HasAnimDictLoaded("random@shop_gunstore")) do 
-        Citizen.Wait(0) 
-    end
-    local pPed = GetPlayerPed(source)
-    TaskPlayAnim(pPed, "random@shop_gunstore", "_idle_b", 1.0, -1.0, -1, 4000, 1, true, true, true)
-end)
+function PlayAnim(anim, dist, isScenario)
+    local pPed = GetPlayerPed(-1)
 
-RegisterNetEvent('esx_secretshop:stopAnim')
-AddEventHandler('esx_secretshop:stopAnim', function(source)
+    if isScenario == true then
+        if IsPedUsingScenario(pPed, anim) then
+            ClearPedTasksImmediately(pPed)
+            return
+        end
+        TaskStartScenarioInPlace(pPed, anim, 0, false)
+    else
+        RequestAnimDict(anim)
+        while (not HasAnimDictLoaded(anim)) do 
+            Citizen.Wait(0) 
+        end
+        TaskPlayAnim(pPed, anim, dist, 8.0, -8.0, -1, 0, 0.0, false, false, false)
+    end
+end
+
+function StopAnim()
     local pPed = GetPlayerPed(source)
     ClearPedTasksImmediately(pPed)
-end)
+end
 
 RegisterNetEvent('esx_secretshop:spawnNPC')
 AddEventHandler('esx_secretshop:spawnNPC', function()
@@ -100,6 +108,35 @@ function IsNearNPC()
     end
 end
 
+function TalkWithNPC(time)
+
+    Citizen.CreateThread(function()
+        exports['progressBars']:startUI(time, _U("talking_with_npc"))
+        PlayAnim("WORLD_HUMAN_SMOKING", "", true)
+        Citizen.Wait(time)
+
+        local chance = math.random(0, 100)
+        if (chance > Config.Chance) then
+            ESX.ShowNotification(_U("try_again_later"))
+            PlayAnim("gestures@m@standing@casual", "gesture_damn", false)
+        elseif (chance < Config.Chance) then
+            PlayAnim("mp_action", "thanks_male_06", false)
+            ESX.ShowNotification(_U("showed_the_way"))
+            for _, item in pairs(Config.NPC) do
+            blip = AddBlipForCoord(item.x, item.y, item.z)
+            SetBlipRoute(blip, true)
+            SetBlipRouteColour(blip, 5)
+            BeginTextCommandSetBlipName("STRING")
+            AddTextComponentString(_U('mission_blip'))
+            EndTextCommandSetBlipName(blip)
+            table.insert(blips, blip)
+            isInMission = true
+            TriggerServerEvent("esx_secretshop:notifyPolice")
+            end
+        end
+    end)
+end
+
 function IsNearMissionNPC()
     
     RequestAnimDict("random@shop_gunstore")
@@ -138,18 +175,7 @@ function OpenMissionMenu()
             elements = elements
         }, function(data, menu)
             if data.current.value == "weapons" then
-                ESX.ShowNotification(_U("showed_the_way"))
-                for _, item in pairs(Config.NPC) do
-                blip = AddBlipForCoord(item.x, item.y, item.z)
-                SetBlipRoute(blip, true)
-                SetBlipRouteColour(blip, 5)
-                BeginTextCommandSetBlipName("STRING")
-                AddTextComponentString(_U('mission_blip'))
-                EndTextCommandSetBlipName(blip)
-                table.insert(blips, blip)
-                isInMission = true
-                TriggerServerEvent("esx_secretshop:notifyPolice")
-                end
+                TalkWithNPC(Config.Time)
             elseif data.current.value == "cancel" then
                 ESX.ShowNotification(_U('mission_canceled'))
                 ClearAllBlipRoutes()
@@ -173,7 +199,8 @@ function OpenWeaponMenu()
         table.insert(elements, {
             label     = item.label .. ' - <span style="color:green;">$' .. item.price .. ' </span>',
             price     = item.price,
-            value     = item.name
+            value     = item.name,
+            isWeapon  = item.isWeapon
         })
     end
     ESX.UI.Menu.Open(
@@ -182,7 +209,11 @@ function OpenWeaponMenu()
             align = 'bottom-right',
             elements = elements
         }, function(data, menu)
-            TriggerServerEvent('esx_secretshop:buyWeapon', data.current.value, data.current.price)
+            if data.current.isWeapon == true then
+                TriggerServerEvent('esx_secretshop:buyWeapon', data.current.value, data.current.price)
+            else
+                TriggerServerEvent('esx_secretshop:buyItem', data.current.value, data.current.price)
+            end
         end, function(data, menu)
             menu.close()
         end
