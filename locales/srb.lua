@@ -1,0 +1,22 @@
+Locales['srb'] = {
+    ['are_you_sure'] = 'Da li ste sigurni?',
+    ['main_menu'] = 'Illegalna Oruzija',
+    ['you_already_have'] = 'Vec imate tu pusku.',
+    ['not_enough_money'] = 'Nemate dovoljno para za to.',
+    ['weapon_mission'] = 'Misija Oruzija',
+    ['missions'] = 'Misije',
+    ['cancel_missions'] = 'Prekinite misije',
+    ['you_have_bought'] = 'Kupili ste ovo oruzije.',
+    ['weaponmenu'] = 'Ilegalna Prodavnica Oruzija',
+    ['mission_canceled'] = 'Prekinuli ste misiju.',
+    ['mission_blip'] = 'Destinacija misije',
+    ['showed_the_way'] = 'Clan od genga ti je pokazao destinaciju.',
+    ['talk_with_mission'] = "Kliknite ~INPUT_CONTEXT~ da bih razgovarali clanom od genga.",
+    ['talk_with_gang'] = "Kliknite ~INPUT_CONTEXT~ da bih razgovarali sa dilerom puska.",
+    ['the_mission_stopped'] = "Misija za iligalna oruzija je prekinuta.",
+    ['someone_started_mission'] = "Neko ce da kupi ~r~ILEGALNO~s~ oruzija",
+    ['bought_weapon'] = 'Kupili ste ovo oruzije.',
+    ['bought_item'] = 'Kupili ste ovu spravu.'
+    ['try_again_later'] = "Pokusajte ponovo kasnije",
+    ['talking_with_npc'] = "Popricajte sa covekom"
+}

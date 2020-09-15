@@ -3,8 +3,7 @@ game 'gta5'
 
 client_scripts {
     '@es_extended/locale.lua',
-    'locales/bg.lua',
-    'locales/en.lua',
+    'locales/*.lua',
     'config.lua',
     'client/client.lua',
 }
@@ -12,11 +11,12 @@ client_scripts {
 server_scripts {
     'config.lua',
     '@es_extended/locale.lua',
-    'locales/bg.lua',
-    'locales/en.lua',
+    'locales/*.lua',
     'server/server.lua',
 }
 
 dependencies {
     'es_extended',
+    'esx_outlawalert',
+    'progressBars'
 }

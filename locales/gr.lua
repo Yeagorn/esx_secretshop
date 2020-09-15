@@ -1,0 +1,22 @@
+Locales['gr'] = {
+    ['are_you_sure'] = 'Eiste sigouroi?',
+    ['main_menu'] = 'Paranoma Opla',
+    ['you_already_have'] = 'Idi exete ayto to oplo.',
+    ['not_enough_money'] = 'Den exete arketa lefta gia na to agorasete.',
+    ['weapon_mission'] = 'Apostoli Oplwn',
+    ['missions'] = 'Apostoles',
+    ['cancel_missions'] = 'Akirwsi apostolwn',
+    ['you_have_bought'] = 'Exete agorasei ayto to oplo.',
+    ['weaponmenu'] = 'Paranomi Agora Oplwn',
+    ['mission_canceled'] = 'Akirwsate tin apostoli.',
+    ['mission_blip'] = 'Proorismos apostolis',
+    ['showed_the_way'] = 'To gang sas edikse tin diadromi.',
+    ['talk_with_mission'] = "Patiste ~INPUT_CONTEXT~ gia na milisete me to melos tou gang.",
+    ['talk_with_gang'] = "Patiste ~INPUT_CONTEXT~ gia na milisete me ton politi oplwn.",
+    ['the_mission_stopped'] = "I apostoli gia ta paranoma opla stamatise.",
+    ['someone_started_mission'] = "Kapoios tha agorasei ~r~PARANOMA~s~ opla...",
+    ['bought_weapon'] = 'Agorasete to oplo.',
+    ['bought_item'] = 'Agorasate to antikeimeno.'
+    ['try_again_later'] = "Prospathiste ksana argotera",
+    ['talking_with_npc'] = "Milate me to atomo"
+}
