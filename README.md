@@ -5,6 +5,7 @@ ESX Secret Shop adds.. well you guessed it - secret shops to the already existin
 ### Dependencies
 - es_extended
 - esx_outlawalert
+- [progressBars](https://github.com/EthanPeacock/progressBars/releases/tag/1.0)
 
 ## Download & Installation
 

@@ -2,7 +2,7 @@ Config = {}
 
 Config.Locale = 'en'
 Config.Chance = 100
-Config.Time = 10000
+Config.Time = 10000 -- In milliseconds
 Config.UseBlackMoney = true
 Config.NotifyPolice = true
 Config.Limit = 1 -- Limit on items which is bought
