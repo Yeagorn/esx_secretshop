@@ -16,7 +16,7 @@ Locales['ger'] = {
     ['the_mission_stopped'] = "Die Mission für illegale Waffen wurde gestoppt.",
     ['someone_started_mission'] = "Jemand wird Waffen kaufen ~r~ILLEGAL~s~",
     ['bought_weapon'] = 'Du hast diese Waffe gekauft.',
-    ['bought_item'] = 'Sie haben diesen Artikel gekauft.'
+    ['bought_item'] = 'Sie haben diesen Artikel gekauft.',
     ['try_again_later'] = "Versuchen Sie es später noch einmal",
-    ['talking_with_npc'] = "Mit der Bande reden"
+    ['talking_with_npc'] = "Mit der Bande reden",
 }

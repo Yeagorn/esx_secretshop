@@ -16,7 +16,7 @@ Locales['gr'] = {
     ['the_mission_stopped'] = "I apostoli gia ta paranoma opla stamatise.",
     ['someone_started_mission'] = "Kapoios tha agorasei ~r~PARANOMA~s~ opla...",
     ['bought_weapon'] = 'Agorasete to oplo.',
-    ['bought_item'] = 'Agorasate to antikeimeno.'
+    ['bought_item'] = 'Agorasate to antikeimeno.',
     ['try_again_later'] = "Prospathiste ksana argotera",
     ['talking_with_npc'] = "Milate me to atomo"
 }

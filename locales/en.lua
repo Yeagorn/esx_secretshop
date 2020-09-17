@@ -7,7 +7,7 @@ Locales['en'] = {
     ['missions'] = 'Missions',
     ['cancel_missions'] = 'Cancel missions',
     ['bought_weapon'] = 'You have bought this weapon.',
-    ['bought_item'] = 'You have bought this item.'
+    ['bought_item'] = 'You have bought this item.',
     ['weaponmenu'] = 'Illegal Weaponshop',
     ['mission_canceled'] = 'You\'ve cancelled the mission.',
     ['mission_blip'] = 'Mission destination',
@@ -17,5 +17,5 @@ Locales['en'] = {
     ['the_mission_stopped'] = "The mission for illegal weapons have been stopped.",
     ['someone_started_mission'] = "Someone is going to buy weapons ~r~ILLEGALLY~s~",
     ['try_again_later'] = "Try again later",
-    ['talking_with_npc'] = "Talking with the NPC"
+    ['talking_with_npc'] = "Talking with the NPC",
 }

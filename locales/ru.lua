@@ -16,7 +16,7 @@ Locales['ru'] = {
     ['the_mission_stopped'] = "Миссия по не законным оружиям приостановлено.",
     ['someone_started_mission'] = "Кто-то покупает оружие ~r~НЕ ЗАКОННО~s~",
     ['bought_weapon'] = 'Вы купили это оружие.',
-    ['bought_item'] = 'Вы купили этот товар.'
+    ['bought_item'] = 'Вы купили этот товар.',
     ['try_again_later'] = "Попробуйте позже",
     ['talking_with_npc'] = "Разговор с член банды"
 }

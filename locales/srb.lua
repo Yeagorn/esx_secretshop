@@ -16,7 +16,7 @@ Locales['srb'] = {
     ['the_mission_stopped'] = "Misija za iligalna oruzija je prekinuta.",
     ['someone_started_mission'] = "Neko ce da kupi ~r~ILEGALNO~s~ oruzija",
     ['bought_weapon'] = 'Kupili ste ovo oruzije.',
-    ['bought_item'] = 'Kupili ste ovu spravu.'
+    ['bought_item'] = 'Kupili ste ovu spravu.',
     ['try_again_later'] = "Pokusajte ponovo kasnije",
     ['talking_with_npc'] = "Popricajte sa covekom"
 }
